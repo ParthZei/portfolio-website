@@ -1,0 +1,130 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* ─── Tailwind theme tokens ──────────────────────────────────────────────── */
+@theme inline {
+  /* Colors */
+  --color-background:           var(--background);
+  --color-foreground:           var(--foreground);
+  --color-card:                 var(--card);
+  --color-card-foreground:      var(--card-foreground);
+  --color-popover:              var(--popover);
+  --color-popover-foreground:   var(--popover-foreground);
+  --color-primary:              var(--primary);
+  --color-primary-foreground:   var(--primary-foreground);
+  --color-secondary:            var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted:                var(--muted);
+  --color-muted-foreground:     var(--muted-foreground);
+  --color-accent:               var(--accent);
+  --color-accent-foreground:    var(--accent-foreground);
+  --color-destructive:          var(--destructive);
+  --color-border:               var(--border);
+  --color-input:                var(--input);
+  --color-ring:                 var(--ring);
+
+  /* Fonts */
+  --font-sans:    var(--font-geist-sans);
+  --font-mono:    var(--font-geist-mono);
+
+  /* Border radius — simple 4-step scale anchored at 6 px */
+  --radius-sm:  calc(var(--radius) * 0.5);   /* 3 px */
+  --radius-md:  var(--radius);               /* 6 px */
+  --radius-lg:  calc(var(--radius) * 2);     /* 12 px */
+  --radius-xl:  calc(var(--radius) * 2.67);  /* 16 px */
+  --radius-full: 9999px;
+
+  /* Typography — clean scale with generous leading */
+  --text-xs:   0.75rem;    --text-xs--line-height:   1.125rem;
+  --text-sm:   0.875rem;   --text-sm--line-height:   1.375rem;
+  --text-base: 1rem;       --text-base--line-height: 1.75rem;
+  --text-lg:   1.125rem;   --text-lg--line-height:   1.875rem;
+  --text-xl:   1.25rem;    --text-xl--line-height:   1.875rem;
+  --text-2xl:  1.5rem;     --text-2xl--line-height:  2rem;
+  --text-3xl:  1.875rem;   --text-3xl--line-height:  2.25rem;
+  --text-4xl:  2.25rem;    --text-4xl--line-height:  2.5rem;
+  --text-5xl:  3rem;       --text-5xl--line-height:  1;
+  --text-6xl:  3.75rem;    --text-6xl--line-height:  1;
+  --text-7xl:  4.5rem;     --text-7xl--line-height:  1;
+
+  /* Tracking */
+  --tracking-tight:  -0.02em;
+  --tracking-normal:  0em;
+  --tracking-wide:    0.04em;
+
+  /* Spacing additions on top of Tailwind defaults */
+  --spacing-18:  4.5rem;
+  --spacing-22:  5.5rem;
+  --spacing-26:  6.5rem;
+  --spacing-30:  7.5rem;
+  --spacing-section: 6rem;
+}
+
+/* ─── Design tokens ──────────────────────────────────────────────────────── */
+:root {
+  /* Palette
+   *   Background  → pure white
+   *   Primary     → black  (buttons, headings, strong UI)
+   *   Secondary   → near-white (chips, subtle backgrounds)
+   *   Accent      → blue  (#2563EB equivalent)
+   */
+  --background:           oklch(1 0 0);          /* #ffffff */
+  --foreground:           oklch(0.09 0 0);        /* #141414 */
+
+  --card:                 oklch(1 0 0);
+  --card-foreground:      oklch(0.09 0 0);
+
+  --popover:              oklch(1 0 0);
+  --popover-foreground:   oklch(0.09 0 0);
+
+  /* Primary = black */
+  --primary:              oklch(0.09 0 0);        /* #141414 */
+  --primary-foreground:   oklch(1 0 0);           /* #ffffff */
+
+  /* Secondary = off-white */
+  --secondary:            oklch(0.96 0 0);        /* #f5f5f5 */
+  --secondary-foreground: oklch(0.09 0 0);
+
+  --muted:                oklch(0.96 0 0);
+  --muted-foreground:     oklch(0.48 0 0);        /* #737373 */
+
+  /* Accent = blue (#2563EB) */
+  --accent:               oklch(0.578 0.218 264);
+  --accent-foreground:    oklch(1 0 0);
+
+  --destructive:          oklch(0.577 0.245 27.325);
+
+  --border:               oklch(0.91 0 0);        /* #e5e5e5 */
+  --input:                oklch(0.91 0 0);
+  --ring:                 oklch(0.578 0.218 264); /* blue — matches accent */
+
+  /* Base radius = 6 px */
+  --radius: 0.375rem;
+}
+
+/* ─── Base styles ────────────────────────────────────────────────────────── */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    line-height: 1.75;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+    line-height: 1.2;
+  }
+
+  ::selection {
+    background-color: oklch(0.578 0.218 264 / 15%);
+  }
+}
