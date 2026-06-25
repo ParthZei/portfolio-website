@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef, useState, useEffect } from 'react'
+import Image from 'next/image'
 import { NavArrowLeft, NavArrowRight } from 'iconoir-react'
 import SpiralDiagram from '@/components/SpiralDiagram'
 
@@ -14,13 +15,17 @@ function SectionLabel({ children }) {
   )
 }
 
-function Placeholder({ label, className = '' }) {
+function CaseStudyImage({ src, alt, className = '' }) {
   return (
-    <div
-      className={`bg-secondary flex items-center justify-center text-xs uppercase tracking-wide text-muted-foreground ${className}`}
-    >
-      {label}
-    </div>
+    <Image
+      src={src}
+      alt={alt}
+      width={0}
+      height={0}
+      sizes="100vw"
+      style={{ width: '100%', height: 'auto' }}
+      className={className}
+    />
   )
 }
 
@@ -132,9 +137,9 @@ export default function BharatsurePage() {
       </section>
 
       {/* Full-bleed hero image */}
-      <Placeholder
-        label="Hero Image"
-        className="w-full aspect-[16/9]"
+      <CaseStudyImage
+        src="/bharatsure/images/Hero Image.png"
+        alt="Hero Image"
       />
 
       {/* ── ABOUT THE CLIENT ──────────────────────────────────────────────── */}
@@ -250,9 +255,9 @@ export default function BharatsurePage() {
             Here is how that thinking translated into the product.
           </p>
         </div>
-        <Placeholder
-          label="Solving Through Design -- Process Visual"
-          className="w-full aspect-[21/9]"
+        <CaseStudyImage
+          src="/bharatsure/images/Solving Through Design -- Process Visual.png"
+          alt="Solving Through Design -- Process Visual"
         />
       </section>
 
@@ -274,11 +279,11 @@ export default function BharatsurePage() {
                 questions and map out the experience before any design work began.
               </p>
             </div>
-            <Placeholder label="PRD Snapshot" className="w-full aspect-[4/3]" />
+            <CaseStudyImage src="/bharatsure/images/PRD Snapshot.png" alt="PRD Snapshot" />
           </div>
 
           {/* Row 2: full-width within container */}
-          <Placeholder label="Workflow Documentation" className="w-full aspect-[16/9]" />
+          <CaseStudyImage src="/bharatsure/images/Workflow Documentation.png" alt="Workflow Documentation" />
 
         </div>
       </section>
@@ -296,7 +301,7 @@ export default function BharatsurePage() {
                 systems feel simple, structured and easy to move through.
               </p>
             </div>
-            <Placeholder label="The Work" className="w-full aspect-[4/3]" />
+            <CaseStudyImage src="/bharatsure/images/The Work.png" alt="The Work" />
           </div>
         </div>
       </section>
@@ -327,7 +332,10 @@ export default function BharatsurePage() {
               { n: 8, cap: "Health inputs assessed in real time, so brokers know what's viable before the quote goes out." },
             ].map(({ n, cap }) => (
               <div key={n}>
-                <Placeholder label={`Broker Platform, Image ${n}`} className="w-full aspect-[4/3]" />
+                <CaseStudyImage
+                  src={`/bharatsure/images/Broker Platform, Image ${n}.png`}
+                  alt={`Broker Platform, Image ${n}`}
+                />
                 <p className="text-sm text-muted-foreground mt-3">{cap}</p>
               </div>
             ))}
@@ -357,7 +365,10 @@ export default function BharatsurePage() {
               { n: 4, cap: 'The platform extended beyond insurance, branded and configured for how each partner wants to sell.' },
             ].map(({ n, cap }) => (
               <div key={n}>
-                <Placeholder label={`HR / Employee App, Image ${n}`} className="w-full aspect-[4/3]" />
+                <CaseStudyImage
+                  src={`/bharatsure/images/Employee App, Image ${n}.png`}
+                  alt={`Employee App, Image ${n}`}
+                />
                 <p className="text-sm text-muted-foreground mt-3">{cap}</p>
               </div>
             ))}
@@ -381,9 +392,9 @@ export default function BharatsurePage() {
           </p>
         </div>
         {/* Full-bleed */}
-        <Placeholder
-          label="Design System, Component Library Overview"
-          className="w-full aspect-[21/9]"
+        <CaseStudyImage
+          src="/bharatsure/images/Design System, Component Library Overview.png"
+          alt="Design System, Component Library Overview"
         />
       </section>
 
@@ -406,17 +417,24 @@ export default function BharatsurePage() {
                   ref={trackRef}
                   className="flex gap-4 transition-transform duration-500 ease-in-out"
                 >
-                  {Array.from({ length: CARDS * 2 }, (_, i) => (
-                    <div
-                      key={i}
-                      className="shrink-0 aspect-square bg-secondary flex flex-col justify-end p-5"
-                      style={{ width: cardW ?? 300 }}
-                    >
-                      <p className="text-xs uppercase tracking-wide text-muted-foreground">
-                        Building Block {(i % CARDS) + 1}
-                      </p>
-                    </div>
-                  ))}
+                  {Array.from({ length: CARDS * 2 }, (_, i) => {
+                    const n = (i % CARDS) + 1
+                    return (
+                      <div
+                        key={i}
+                        className="relative shrink-0 aspect-square overflow-hidden"
+                        style={{ width: cardW ?? 300 }}
+                      >
+                        <Image
+                          src={`/bharatsure/images/Building Block ${n}.png`}
+                          alt={`Building Block ${n}`}
+                          fill
+                          sizes="100vw"
+                          className="object-cover"
+                        />
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
 
@@ -457,22 +475,22 @@ export default function BharatsurePage() {
           </p>
         </div>
         {/* Full-bleed */}
-        <Placeholder
-          label="Healthysure Website, Full Page Screenshot"
-          className="w-full aspect-[21/9]"
+        <CaseStudyImage
+          src="/bharatsure/images/Healthysure Website, Full Page Screenshot.png"
+          alt="Healthysure Website, Full Page Screenshot"
         />
 
         {/* Two-row image grid */}
         <div className="max-w-[1320px] mx-auto px-6 lg:px-16 mt-6 flex flex-col gap-6">
           {/* Row 1: 60/40 — left anchors height, right fills */}
           <div className="grid grid-cols-[3fr_2fr] gap-6">
-            <Placeholder label="Healthysure Features Section" className="w-full aspect-[5/4]" />
-            <Placeholder label="Healthysure Mobile Add-ons" className="w-full h-full" />
+            <CaseStudyImage src="/bharatsure/images/Healthysure Features Section.png" alt="Healthysure Features Section" />
+            <CaseStudyImage src="/bharatsure/images/Healthysure Mobile Add-ons.png" alt="Healthysure Mobile Add-ons" />
           </div>
           {/* Row 2: 40/60 — left anchors height, right fills */}
           <div className="grid grid-cols-[2fr_3fr] gap-6">
-            <Placeholder label="Healthysure Product Categories" className="w-full aspect-[3/4]" />
-            <Placeholder label="Healthysure Website Mockup" className="w-full h-full" />
+            <CaseStudyImage src="/bharatsure/images/Healthysure Product Categories.png" alt="Healthysure Product Categories" />
+            <CaseStudyImage src="/bharatsure/images/Healthysure Website Mockup.png" alt="Healthysure Website Mockup" />
           </div>
         </div>
       </section>
