@@ -26,7 +26,7 @@ export default function Nav() {
             About
           </a>
           <a
-            href="/resume.pdf"
+            href="https://drive.google.com/file/d/1Yp8z-L6vbADPaVaicJjfDy2Yqx5wEZrA/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="font-normal text-[#4E545F] no-underline hover:underline"
