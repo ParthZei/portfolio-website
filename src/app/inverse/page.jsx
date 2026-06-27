@@ -619,9 +619,12 @@ export default function InversePage() {
         <div className="max-w-[1320px] mx-auto px-6 lg:px-16">
 
           <SectionLabel>Design</SectionLabel>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-14">
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-6">
             Investment Strategy Builder
           </h2>
+          <p className="text-sm text-[#4E545F] leading-relaxed mb-14 max-w-3xl">
+            Designed to replace the blank-slate problem with a structured, guided experience. The tool builds a personalised investment plan from the user's own inputs, covering risk tolerance, financial goals, and investment horizon, and integrates AI-driven insights with customisable options, balancing automation with personal control.
+          </p>
 
           {/* Full-width hero */}
           <CaseStudyImage
@@ -707,9 +710,12 @@ export default function InversePage() {
         <div className="max-w-[1320px] mx-auto px-6 lg:px-16">
 
           <SectionLabel>Design</SectionLabel>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-14">
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-6">
             AI Investment Suggestion Tool
           </h2>
+          <p className="text-sm text-[#4E545F] leading-relaxed mb-14 max-w-3xl">
+            Designed to provide intelligent, data-driven recommendations tailored to the user's portfolio, current market conditions, and individual financial objectives. Recommendations are not opaque outputs; the reasoning is surfaced alongside every suggestion, giving users a real-time snapshot of market conditions, asset allocation, and key performance metrics they can act on with confidence.
+          </p>
 
           {/* Full-width hero */}
           <CaseStudyImage
@@ -799,9 +805,12 @@ export default function InversePage() {
         <div className="max-w-[1320px] mx-auto px-6 lg:px-16">
 
           <SectionLabel>Design</SectionLabel>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-14">
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-6">
             Budgeting and Expense Tracking
           </h2>
+          <p className="text-sm text-[#4E545F] leading-relaxed mb-14 max-w-3xl">
+            Designed around simplicity and a single connecting idea: that spending clarity and investment capacity are the same problem. The tool automatically imports and categorises transactions, offering a holistic view of spending, saving, and budgeting patterns, and uses AI-driven suggestions to surface optimisation opportunities, making the link between daily financial behaviour and long-term investment goals visible and actionable.
+          </p>
 
           {/* Full-width hero */}
           <CaseStudyImage

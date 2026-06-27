@@ -25,8 +25,7 @@
   --color-ring:                 var(--ring);
 
   /* Fonts */
-  --font-sans:    var(--font-geist-sans);
-  --font-mono:    var(--font-geist-mono);
+  --font-sans:    var(--font-dm-sans);
 
   /* Border radius — simple 4-step scale anchored at 6 px */
   --radius-sm:  calc(var(--radius) * 0.5);   /* 3 px */
@@ -69,7 +68,7 @@
    *   Secondary   → near-white (chips, subtle backgrounds)
    *   Accent      → blue  (#2563EB equivalent)
    */
-  --background:           oklch(1 0 0);          /* #ffffff */
+  --background:           oklch(0.972 0 0);       /* #f7f7f7 — very subtle off-white */
   --foreground:           oklch(0.09 0 0);        /* #141414 */
 
   --card:                 oklch(1 0 0);
