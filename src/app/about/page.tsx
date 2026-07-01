@@ -157,7 +157,7 @@ export default function About() {
                 </a>
 
                 <a
-                  href="https://drive.google.com/file/d/1Yp8z-L6vbADPaVaicJjfDy2Yqx5wEZrA/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1W_4mVkYewaqAWrMFjY3vz5R9X8XLhpRK/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full border border-[#272A30] rounded-full py-2.5 text-center text-sm font-medium text-black no-underline mt-4 hover:bg-[#F9FAFA] transition-colors"
